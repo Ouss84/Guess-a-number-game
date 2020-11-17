@@ -1,19 +1,11 @@
 const form = document.querySelector("#form");
-const yourGuess = document.querySelector("#guess");
-const result = document.querySelector("#result");
 
 form.addEventListener("submit", guessOperation);
 
+//defining the guess operation
 function guessOperation (e){
-const guessedNumber = yourGuess.Value;
-const randomNumber = 3;
-if (guessedNumber === randomNumber){
-    const message = result.createTextNode('congratulation');
-    result.appendChild(message);
-}else{
-    result.textContent='try again'
-}
 
+const result = document.querySelector("#result").value ="hello"
 
     e.preventDefault();
 }
