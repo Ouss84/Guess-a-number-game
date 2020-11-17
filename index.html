@@ -15,7 +15,10 @@
     <div class="container center">
       <h1 class="text-center">Guessing Game</h1>
       <div class="card mt-4 col-7 mx-auto">
-        <div class="card-header">Guess a number!</div>
+        <div class="card-header">
+          Guess a number! Please chose a number between
+          <span id="min"></span> and <span id="max"></span> !
+        </div>
         <div class="card-body">
           <form id="form">
             <div class="input-group mb-3">
@@ -31,7 +34,7 @@
                   type="submit"
                   id="button-addon2"
                 >
-                  Submit
+                  check your guess
                 </button>
               </div>
             </div>
@@ -50,7 +53,7 @@
               type="reset"
               id="button-addon2"
             >
-              Reset
+              Play again
             </button>
           </form>
         </div>
