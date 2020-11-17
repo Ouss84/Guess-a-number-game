@@ -17,3 +17,21 @@ maxNum.textContent = max;
 
 
 
+//adding the event listener when submitting the choice
+form.addEventListener("submit", function (e){
+let guess = yourGuess.value;
+if(guess === null || guess > max || guess < min){
+    messageDisplay(`Please enter a valid number between ${min} and ${max}`, 'red');
+}
+
+
+    e.preventDefault();
+});
+
+//defining the messageDisplay function 
+
+function messageDisplay(message, color){
+   result.value = message;
+   result.style.color = color;
+}
+
