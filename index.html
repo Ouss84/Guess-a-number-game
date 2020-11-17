@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Guessing A Number</title>
+  </head>
+  <body class="bg-light">
+    <div class="container center">
+      <h1 class="text-center">Guessing Game</h1>
+      <div class="card mt-4 col-7 mx-auto">
+        <div class="card-header">Guess a number!</div>
+        <div class="card-body">
+          <form id="form">
+            <div class="input-group mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="guess"
+                placeholder="enter your guess here!"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="result">Result</label>
+              <input
+                type="text"
+                class="form-control"
+                id="result"
+                placeholder="How you did..."
+                disabled
+              />
+            </div>
+            <button
+              class="btn btn-outline-secondary"
+              type="reset"
+              id="button-addon2"
+            >
+              Reset
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
