@@ -79,6 +79,6 @@ submitBtn.className = 'play-again';
 
 //defining the random Number fuction
 function randomNum (min, max){
-    console.log (Math.floor(Math.random()*(max-min+1)+min));
+    return Math.floor(Math.random()*(max-min+1)+min);
 }
 
