@@ -5,11 +5,12 @@ let min = 1,
     guessesNum = 3;
 
 //UI variables
-const form = document.querySelector("#form"),
-      yourGuess =document.querySelector("#guess"),
+const guess = document.querySelector("#guess"),
+      guessInput =document.querySelector("#guess-input"),
       minNum = document.querySelector('#min'),
       maxNum =document.querySelector('#max'),
-      result = document.querySelector('#result');
+      result = document.querySelector('.result'),
+      submitBtn = document.querySelector('#submit');
 
 //defining the limits
 minNum.textContent = min;
@@ -18,20 +19,20 @@ maxNum.textContent = max;
 
 
 //adding the event listener when submitting the choice
-form.addEventListener("submit", function (e){
-let guess = yourGuess.value;
+submitBtn.addEventListener("click", function (){
+let guess = parseInt(guessInput.value);
 if(guess === null || guess > max || guess < min){
     messageDisplay(`Please enter a valid number between ${min} and ${max}`, 'red');
-}
+    
+} 
 
-
-    e.preventDefault();
 });
 
 //defining the messageDisplay function 
 
 function messageDisplay(message, color){
-   result.value = message;
+   result.textContent = message; 
    result.style.color = color;
 }
+
 
