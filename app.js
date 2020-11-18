@@ -27,17 +27,15 @@ if(isNaN(guess) || guess > max || guess < min){
 //correct guess
 if (guess === winNum){
     //disabling the input field and styling the border
-    guessInput.disabled = true;
-    guessInput.style.borderColor = 'green';
-    messageDisplay(`${guess} is correct ! Good play!`, 'green');
+    
+    gameOver(true, `${guess} is correct ! Good play!`)
 }else{
 //wrong guess
 guessesLeft -= 1;
 if (guessesLeft === 0){
-    //Loss Game Over
-    guessInput.disabled = true;
-    guessInput.style.borderColor = 'red';
-    messageDisplay(`Game Over, You Lost! The correct number was ${winNum}`, 'red');
+    //Game Over
+    
+    gameOver(false, `Game Over, You Lost! The correct number was ${winNum}`)
 } else {
     //wrong guess but still guesses left
     
@@ -54,6 +52,16 @@ if (guessesLeft === 0){
 function messageDisplay(message, color){
    result.textContent = message; 
    result.style.color = color;
+}
+
+//defining Game Over function
+function gameOver (won, msg){
+    let color;
+    won === true ? color='green' : color='red';
+    guessInput.disabled = true;
+    guessInput.style.borderColor = color;
+    result.style.color = color;
+    messageDisplay(msg);
 }
 
 
