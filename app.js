@@ -35,7 +35,7 @@ if(isNaN(guess) || guess > max || guess < min){
 if (guess === winNum){
     //disabling the input field and styling the border
     
-    gameOver(true, `${guess} is correct ! Good play!`);
+    gameOver(true, `${guess} is correct ! Good guess!`);
     
 }else{
 //wrong guess
