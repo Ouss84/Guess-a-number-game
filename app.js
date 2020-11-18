@@ -1,7 +1,7 @@
 //declaring the variables
 let min = 1,
     max = 10,
-    winNum = 5,
+    winNum = randomNum(min,max),
     guessesLeft = 3;
 
 //UI variables
@@ -77,7 +77,8 @@ function gameOver (won, msg){
 submitBtn.className = 'play-again';
 }
 
-
-
-
+//defining the random Number fuction
+function randomNum (min, max){
+    console.log (Math.floor(Math.random()*(max-min+1)+min));
+}
 
