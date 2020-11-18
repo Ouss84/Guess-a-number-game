@@ -23,9 +23,16 @@ submitBtn.addEventListener("click", function (){
 let guess = parseInt(guessInput.value);
 if(guess === null || guess > max || guess < min){
     messageDisplay(`Please enter a valid number between ${min} and ${max}`, 'red');
-    
 } 
+//correct guess
+if (guess === winNum){
+    //disabling the input field and styling the border
+    guessInput.disabled = true;
+    guessInput.style.borderColor = 'green';
+    messageDisplay(`${guess} is correct ! Good play!`, 'green');
+}else{
 
+}
 });
 
 //defining the messageDisplay function 
