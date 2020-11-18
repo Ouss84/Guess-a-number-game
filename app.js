@@ -17,31 +17,41 @@ minNum.textContent = min;
 maxNum.textContent = max;
 
 
+//adding the play again event listener
+guess.addEventListener('mousedown', function(e){
+    if (e.target.className === 'play-again'){
+        window.location.reload();
+    }
+})
+
 
 //adding the event listener when submitting the choice
 submitBtn.addEventListener("click", function (){
 let guess = parseInt(guessInput.value);
 if(isNaN(guess) || guess > max || guess < min){
     messageDisplay(`Please enter a valid number between ${min} and ${max}`, 'red');
-} 
+} else{
 //correct guess
 if (guess === winNum){
     //disabling the input field and styling the border
     
-    gameOver(true, `${guess} is correct ! Good play!`)
+    gameOver(true, `${guess} is correct ! Good play!`);
+    
 }else{
 //wrong guess
 guessesLeft -= 1;
 if (guessesLeft === 0){
     //Game Over
     
-    gameOver(false, `Game Over, You Lost! The correct number was ${winNum}`)
+    gameOver(false, `Game Over, You Lost! The correct number was ${winNum}`);
+    
 } else {
     //wrong guess but still guesses left
     
     guessInput.style.borderColor = 'red';
     messageDisplay(`${guess} is incorrect ! ${guessesLeft} guesses left`, 'red');
     guessInput.value = '';
+}
 }
 }
 });
@@ -62,6 +72,12 @@ function gameOver (won, msg){
     guessInput.style.borderColor = color;
     result.style.color = color;
     messageDisplay(msg);
+    //defining playAgain button
+    submitBtn.textContent='play-again';
+submitBtn.className = 'play-again';
 }
+
+
+
 
 
